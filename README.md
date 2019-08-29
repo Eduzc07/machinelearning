@@ -1,6 +1,4 @@
-# machinelearnin
-
-# Maxim
+# Machine Learning
 Para descargar, ejectuar desde el terminal:
 https://github.com/Eduzc07/machinelearning.git
 
