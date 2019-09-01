@@ -1,8 +1,10 @@
 # Machine Learning
-Para descargar, ejectuar desde el terminal:
-https://github.com/Eduzc07/machinelearning.git
+To download use:
+git clone https://github.com/Eduzc07/machinelearning.git
 
-## Create a branch
+Course [Make Money with Machine Learning]: https://www.machinelearningcourse.io from Siraj Raval 
+
+<!-- ## Create a branch
 Create the branch on your local machine and switch in this branch :
 ```
 git checkout -b [name_of_your_new_branch]
@@ -55,6 +57,4 @@ Permanently authenticating with Git repositories:
 git add {files}
 git commit -m "Description"
 git push origin {branch_name}
-```
-
-
+``` -->
