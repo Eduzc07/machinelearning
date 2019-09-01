@@ -2,7 +2,7 @@
 To download use:
 git clone https://github.com/Eduzc07/machinelearning.git
 
-Course [Make Money with Machine Learning]: https://www.machinelearningcourse.io from Siraj Raval 
+Course [Make Money with Machine Learning](https://www.machinelearningcourse.io) from Siraj Raval
 
 <!-- ## Create a branch
 Create the branch on your local machine and switch in this branch :
