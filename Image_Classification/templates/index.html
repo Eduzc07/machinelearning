@@ -1,17 +1,48 @@
+<!-- {% extends "base.html" %} {% block content %} -->
+
+<html lang="en">
+
 <html>
   <head>
+    <!-- <meta charset="UTF-8"> -->
+    <title>Image Classificaton</title>
     <!-- Load the latest version of TensorFlow.js -->
     <script src="https://unpkg.com/@tensorflow/tfjs"></script>
-    <script src="https://unpkg.com/@tensorflow-models/mobilenet"></script>
+    <script src="https://unpkg.com/@tensorflow-models/mobilenet@2.0.2"></script>
+    <script src="https://unpkg.com/@tensorflow-models/knn-classifier"></script>
+    <!-- <link href="{{ url_for('static', filename='../static/css/main.css') }}" rel="stylesheet"> -->
+    <link rel='stylesheet' href='../static/css/main.css'/>
   </head>
+
+
   <body>
-    <h1>My First Web Page</h1>
-    <div id="console"></div>
-    <!-- Add an image that we will use to test -->
-    <img id="img" crossOrigin src="https://i.imgur.com/JlUvsxa.jpg" width=227 height=227/>
+    <div class="content">
+      <h2>Homework 1: Image Classification</h2>
+
+      <p>To teach, start always with class A, and then B, C and No Class:</p>
+
+      <div id="console"></div>
+
+      <br />
+      <div class="videoArea">
+        <video autoplay playsinline muted id="webcam" width="480" height="360"></video>
+      </div>
+
+      <br />
+      <div class="buttons">
+        <button id="class-a">Add Class A</button>
+        <button id="class-b">Add Class B</button>
+        <button id="class-c">Add Class C</button>
+        <button id="class-d">Add No Class</button>
+
+      </div>
+    </div>
+
+
     <!-- Load index.js after the content of the page -->
     <script src="../static/js/index.js"></script>
 
-    <video autoplay playsinline muted id="webcam" width="224" height="224"></video>
   </body>
 </html>
+
+<!-- {% endblock %} -->
