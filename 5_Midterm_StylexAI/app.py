@@ -21,6 +21,17 @@ import os
 app = Flask(__name__)
 app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 
+if not os.path.exists('./media'):
+    os.mkdir('./media')
+    print('[/media] folder has been created.')
+
+if not os.path.exists('./static/outputs'):
+    os.makedirs('./static/outputs')
+    print('[/static/outputs] folder has been created.')
+
+if not os.path.exists('./uploads'):
+    os.mkdir('./uploads')
+    print('[/uploads] folder has been created.')
 # Heroku
 #from flask_heroku import Heroku
 #heroku = Heroku(app)
