@@ -39,3 +39,4 @@ python app.py
 ## Links
 - [Set Paypal Button](https://developer.paypal.com/docs/archive/checkout/integrate/#1-get-the-code)
 - [Customize the PayPal JavaScript SDK Script](https://developer.paypal.com/docs/checkout/reference/customize-sdk/)
+- [Yaml Validator](http://www.yamllint.com/)
