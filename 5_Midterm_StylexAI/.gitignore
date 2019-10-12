@@ -162,3 +162,9 @@ htmlcov/
 .coverage
 .coverage.*
 *,cover
+
+#Ignore Upload Images
+uploads/*
+static/outputs/*
+media/input.png
+media/style.png
