@@ -2,11 +2,6 @@
   width: 130px;
 }
 
-/* .form-button {
-  width: 80px;
-  height: 35px;
-} */
-
 .signup-box {
   margin: auto;
   width: 325px;
@@ -34,13 +29,6 @@
 .select {
   background: rgba(0,0,0,0.1);
 }
-
-/* .paypal-button-container{
-  background-color: #0074D9;
-  width: 100px;
-  height: 100px;
-  display: inline-block;
-} */
 
 input[type="file"] {
     font-family: "Oswald", sans-serif;

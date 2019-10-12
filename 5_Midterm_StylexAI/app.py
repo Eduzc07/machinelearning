@@ -61,9 +61,6 @@ def signup():
             password = helpers.hash_password(request.form['password'])
             email = request.form['email']
             orderID = request.form['orderID']
-            print("======================================")
-            print(orderID)
-            print("======================================")
             if form.validate():
                 if not helpers.username_taken(username):
                     helpers.add_user(username, password, email, orderID)
@@ -91,54 +88,6 @@ def settings():
         return render_template('settings.html', user=user)
     return redirect(url_for('login'))
 
-# ------------------ PayPal ----------------------------------------
-# def get_current_user_id():
-#     return '77777'
-#
-#
-# @app.route("/")
-# def buy_page():
-#     return render_template('index.html', user_id=get_current_user_id())
-#
-
-# @app.route("/paypal_ipn", methods=['POST', 'GET'])
-# def paypal_ipn_listener():
-#     print("IPN event received.")
-#
-#     # Sending message as-is with the notify-validate request
-#     params = request.form.to_dict()
-#     params['cmd'] = '_notify-validate'
-#     headers = {'content-type': 'application/x-www-form-urlencoded',
-#                'user-agent': 'Paypal-devdungeon-tester'}
-#     response = requests.post(VERIFY_URL, params=params, headers=headers, verify=True)
-#     response.raise_for_status()
-#
-#     # See if PayPal confirms the validity of the IPN received
-#     if response.text == 'VERIFIED':
-#         print("Verified IPN response received.")
-#         try:
-#             user_id_of_buyer = params['custom'].split(":")[1]
-#             print("User who bought item: " + str(user_id_of_buyer))
-#
-#             # Take action, e.g. update database to give user 1000 tokens
-#
-#         except Exception as e:
-#             print(e)
-#
-#     elif response.text == 'INVALID':
-#         # Don't trust
-#         print("Invalid IPN response.")
-#     else:
-#         print("Some other response.")
-#         print(response.text)
-#     return ""
-#
-#
-# @app.route("/paypal_cancel")
-# def paypal_cancel():
-#     return "PayPal cancel"
-
-
 @app.route("/paypal_success", methods=['GET', 'POST'])
 def paypal_success():
     if session.get('logged_in'):
@@ -152,10 +101,7 @@ def paypal_success():
 
 @app.route('/predict', methods=['GET', 'POST'])
 def upload():
-    print("---Upload!")
     if request.method == 'POST':
-        print("------- Upload POST!")
-
         # Get the file from post request
         f = request.files['image']
 
@@ -173,32 +119,19 @@ def upload():
 
 @app.route('/style', methods=['GET', 'POST'])
 def setStyle():
-    print("-------------setStyle")
     if request.method == 'POST':
         namePath = request.data
-        print(namePath)
         transfer.setStylePath(namePath)
     return 'Ok'
 
 @app.route('/iteration', methods=['GET', 'POST'])
 def setIteration():
-    print("-------------iteration")
     if request.method == 'POST':
         iter = request.data
-        print(iter)
         transfer.setIteration(iter)
     return 'Ok'
 
-# @app.after_request
-# def add_header(response):
-#     """
-#     Add headers to both force latest IE rendering engine or Chrome Frame,
-#     and also to cache the rendered page for 10 minutes.
-#     """
-#     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
-#     response.headers['Cache-Control'] = 'public, max-age=0'
-#     return response
-
 # ======== Main ============================================================== #
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True)
+    app.run(use_reloader=True)
+    # app.run(debug=True, use_reloader=True)
