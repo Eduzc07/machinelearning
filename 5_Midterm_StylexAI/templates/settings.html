@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% block body %}
+
+<title>Settings</title>
+
+<section class="hero is-light is-medium">
+  <nav class="navbar is-transparent">
+
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <!-- <img src="https://github.com/anfederico/Flaskex/raw/master/media/flaskex-logo.png" alt="Flaskex_logo"> -->
+        <img src="https://streamlending.com.au/wp-content/uploads/2018/01/SL-Loan-Hero-AI-logo-banks-300x264.png" alt="Stylex_logo">
+        <h6 href="/" class="subtitle"><strong>StylexAI</strong></h6>
+      </a>
+
+      <div id="navbar-burger-id" class="navbar-burger burger" data-target="navbar-menu-id">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbar-menu-id" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+
+            <p class="control">
+              <a href="/logout" class="button is-dark is-outlined">
+                <span>Logout</span>
+              </a>
+            </p>
+
+            <p class="control">
+              <a href="/settings" class="button is-dark is-outlined">
+                <span id="cog" class="icon">
+                  <i class="fa fa fa-cog"></i>
+                </span>
+              </a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<section class="hero is-dark is-small is-fullheight header-image">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+
+      <div id="settings" class="settings-box">
+        <div class="settings-area">
+          <h1 class="title">Settings</h1>
+
+          <div class="field">
+            <p class="control has-icons-left">
+              <input id="settings-user" class="input is-dark" type="text" placeholder="{{user.username}}" readonly="readonly">
+              <span class="icon is-small is-left">
+                <i class="fa fa-user"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input id="settings-mail" class="input is-dark" type="text" placeholder="{{user.email}}">
+              <span class="icon is-small is-left">
+                <i class="fa fa-envelope"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input id="settings-pass" class="input" type="password" placeholder="&#x2022&#x2022&#x2022&#x2022&#x2022">
+              <span class="icon is-small is-left">
+                <i class="fa fa-lock"></i>
+              </span>
+            </p>
+          </div>
+
+          <!-- <p class="title is-5" id="setting-status">Account: Free</p> -->
+
+          <p class="title is-5" id="setting-status">{{user.orderID}}</p>
+
+          <a id="save" class="form-button button is-dark is-inverted is-outlined">
+            <span>Save</span>
+          </a>
+          <a href="/" class="form-button button is-dark is-inverted is-outlined">
+            <span>Exit</span>
+          </a>
+        </div>
+
+        <!-- Paypal -->
+        <script src="https://www.paypal.com/sdk/js?client-id=ATlW8zSUFpZo55DxueyrAZpMsgHSbTTkUmDhBRUqwvMVtEVCQIQ3T_wk2sKS4-8K0EA_AbmcfDryAdz_&buyer-country=PE&locale=es_PE"></script>
+        <div class="container" id="paypal-button-container" style="width: 50%"></div>
+
+        <br>
+      </div>
+    </div>
+  </div>
+
+  <!-- <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_donations" />
+  <input type="hidden" name="business" value="edu.zc07@gmail.com" />
+  <input type="hidden" name="item_name" value="Software libre" />
+  <input type="hidden" name="currency_code" value="USD" />
+  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+  <img alt="" border="0" src="https://www.paypal.com/en_PE/i/scr/pixel.gif" width="1" height="1" />
+  </form> -->
+
+</section>
+
+<!-- Paypal buy now button -->
+<!-- <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="SZYLHHAXWKA38">
+    <input type="hidden" name="custom" value="userid:{{ user_id }}" />
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form> -->
+
+
+<section class="hero">
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>StylexAI</strong> by Eduardo Zarate
+          <span class="icon is-small">
+            <i class="fa fa-copyright"></i>
+          </span>2019</a>
+        </p>
+        <p>
+          <a class="icon has-text-dark" href="https://e2i.com.pe" target="_blank">
+            <i class="fa fa-globe"></i>
+          </a>
+          <a class="icon has-text-dark" href="https://github.com/Eduzc07" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+          <a class="icon has-text-dark" href="mailto:e.zarate@pucp.pe" target="_blank">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="../static/js/scripts.js"></script>
+<script src="../static/js/paypal.js"></script>
+{% endblock %}

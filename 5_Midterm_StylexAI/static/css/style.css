@@ -1,0 +1,124 @@
+.login-input {
+  width: 130px;
+}
+
+/* .form-button {
+  width: 80px;
+  height: 35px;
+} */
+
+.signup-box {
+  margin: auto;
+  width: 325px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+.settings-box {
+  margin: auto;
+  width: 325px;
+  background: rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 10px;
+}
+
+.signup-area {
+  padding: 30px;
+}
+
+.settings-area {
+  padding: 30px;
+}
+
+.select {
+  background: rgba(0,0,0,0.1);
+}
+
+/* .paypal-button-container{
+  background-color: #0074D9;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+} */
+
+input[type="file"] {
+    font-family: "Oswald", sans-serif;
+    display: none;
+}
+
+.uploader {
+  cursor: pointer !important;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.chooseFile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  padding-left: 200px;
+  margin-right: -200px;
+}
+
+.loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#thumbnail {
+  width: 100%;
+  cursor: pointer;
+  height: auto;
+}
+
+.display-image {
+  margin: auto;
+  height: 310px;
+  width: 310px;
+  background: rgba(255,255,255,0.05);
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 5px;
+  padding: 10px;
+  /* display: table-cell; */
+  display: table;
+  vertical-align: middle;
+}
+
+.upload-labe {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #39D2B4;
+    color: #fff;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.upload-label:hover {
+    color: #39D2B4;
+    background: #34495E;
+}
+
+.header-image {
+    background-image: url("https://www.forbes.com/forbes-insights/wp-content/uploads/2018/05/dell-background.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #999;
+}

@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero is-light is-medium">
+  <nav class="navbar is-transparent">
+
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <!-- <img src="https://github.com/anfederico/Flaskex/raw/master/media/flaskex-logo.png" alt="Flaskex_logo"> -->
+        <img src="https://streamlending.com.au/wp-content/uploads/2018/01/SL-Loan-Hero-AI-logo-banks-300x264.png" alt="Stylex_logo">
+
+        <h6 href="/" class="subtitle"><strong>StylexAI</strong></h6>
+      </a>
+
+      <div id="navbar-burger-id" class="navbar-burger burger" data-target="navbar-menu-id">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbar-menu-id" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+
+            <p class="control">
+              <a href="/logout" class="button is-dark is-outlined">
+                <span>Logout</span>
+              </a>
+            </p>
+
+            <p class="control">
+              <a href="/settings" class="button is-dark is-outlined">
+                <span id="cog" class="icon">
+                  <i class="fa fa fa-cog"></i>
+                </span>
+              </a>
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<!-- -------------- -->
+<section class="hero is-dark is-fullheight header-image has-text-centered">
+  <!-- <div class="hero-body"> -->
+    <!-- <div class="container has-text-centered"> -->
+    <br>
+      <p class="title is-2">Style Transfer</p>
+
+      <div class="freeText-section">
+        <p class="subtitle is-4"><i>Access as premium only for $1.99 and Download them!!</i></p>
+      </div>
+
+      <br>
+
+      <div class="columns is-mobile is-centered is-vcentered is-full">
+
+        <div class="column is-one-third">
+            <div class="select is-dark is-inverted is-outlined is-large">
+              <select class="is-focused" onchange="styleFunction(this)" id="select-style">
+                <option>Vincent van Gogh</option>
+                <option>Futurism Art</option>
+                <option>Futuristic</option>
+                <option>Paracas</option>
+                <option>Chicha</option>
+                <option>Pop Art</option>
+                <option>Abstract Art</option>
+                <option>Surrealism</option>
+                <option>Da Vinci</option>
+                <option>Technology</option>
+              </select>
+            </div>
+        </div>
+
+        <div class="column is-one-third">
+
+          <div class="field">
+            <div class="button is-dark is-inverted is-outlined is-large">
+              <form id="upload-file" method="post" enctype="multipart/form-data">
+                <label for="imageUpload" class= "file-label">
+                  <input type="file" name="image" id="imageUpload"
+                         accept="image/*"
+                         class= "file-input">
+                     <span class="file-icon">
+                        <i class="fa fa-upload" style="font-size:24px;"></i>
+                     </span>
+                     <span class="file-label">
+                       Upload image
+                     </span>
+                </label>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="column is-one-third">
+          <div class ='columns is-vcentered'>
+               <div class="column">
+                  <h2 class="subtitle is-size-3">Iterations: </h2>
+               </div>
+               <div class="column">
+                 <div class="select is-dark is-inverted is-outlined is-large">
+                   <select class="is-focused" onchange="iterFunction(this)" id="select-iter">
+                     <option>2</option>
+                     <option>5</option>
+                     <option>10</option>
+                     <option>15</option>
+                     <option>20</option>
+                     <option>30</option>
+                     <option>40</option>
+                     <option>50</option>
+                     <option>100</option>
+                   </select>
+                 </div>
+               </div>
+            </div>
+        </div>
+      </div>
+
+  <!-- <div class="columns is-mobile is-centered is-hcentered">
+
+    <div class="column"> -->
+  <div class="columns is-mobile has-text-centered">
+
+    <div class="column is-one-third">
+      <div class="display-image">
+        <img id="style-image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1280px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg"
+             width="310" height="310">
+      </div>
+    </div>
+
+    <div class="column is-one-third">
+      <!-- Image preview -->
+      <div class="display-image ">
+        <div class="image-preview" style="display:none;">
+          <img id="thumbnail" src="#" alt="image-preview-here" width="310" height="310"/>
+        </div>
+      </div>
+    </div>
+
+    <div class="column is-one-third">
+      <div class="display-image">
+        <div class="output-preview" style="display:none;">
+          <img id="outputImage" src="#"  alt="output-preview-here" width="310" height="310"/>
+        </div>
+        <!-- <div class="loader" style="display:none;"></div> -->
+      </div>
+    </div>
+  </div>
+
+  <p class="title is-5" id="login-status" style="display:none;">{{user.orderID}}</p>
+
+  <br>
+</section>
+<!-- -------------- -->
+
+<section class="hero has-text-centered header-image">
+  <div class="columns is-mobile">
+    <div class="column is-one-third">
+      <div class="process-section" style="display:none;">
+        <a id="btn-predict" class="button is-dark is-inverted is-outlined is-large">
+          <span>Process</span>
+        </a>
+          <!-- <button type="button" class="button is-dark-invert is-medium"
+                  id="btn-predict">
+                  Process!
+          </button> -->
+      </div>
+    </div>
+
+    <div class="column is-one-third">
+      <div class="loader" style="display:none;"></div>
+    </div>
+
+    <div class="column is-one-third">
+      <div class="download-section" style="display:none;">
+        <a id="btn-download" class="button is-dark is-inverted is-outlined is-large">
+             <span class="file-icon">
+                <i class="fa fa-download" style="font-size:24px;"></i>
+             </span>
+             <span class="file-label is-dark">
+               Download
+             </span>
+             </a>
+        </a>
+        <!--
+          <button type="button" class="button is-dark-invert is-medium"
+                  id="btn-download">
+                  Download
+          </button> -->
+      </div>
+    </div>
+  </div>
+  <br>
+</section>
+
+<section class="hero">
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>StylexAI</strong> by Eduardo Zarate
+          <span class="icon is-small">
+            <i class="fa fa-copyright"></i>
+          </span>2019</a>
+        </p>
+        <p>
+          <a class="icon has-text-dark" href="https://e2i.com.pe" target="_blank">
+            <i class="fa fa-globe"></i>
+          </a>
+          <a class="icon has-text-dark" href="https://github.com/Eduzc07" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+          <a class="icon has-text-dark" href="mailto:e.zarate@pucp.pe" target="_blank">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<!-- <script src="../static/js/scripts.js"></script> -->
+<!-- <script src="../static/js/index.js"></script> -->
+<script src="../static/js/main.js"></script>
+<!-- <script src="{{ url_for('static', filename='js/main.js') }}" type="text/javascript"></script> -->
+{% endblock %}
