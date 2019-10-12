@@ -13,7 +13,7 @@ paypal.Buttons({
   onApprove: function(data, actions) {
     return actions.order.capture().then(function(details) {
       alert('Transaction completed by ' + details.payer.name.given_name + "\n" +
-                    'Thank you!.');
+                    'Thank you!');
       console.log("---------------------------Paid")
       console.log(data.orderID)
 

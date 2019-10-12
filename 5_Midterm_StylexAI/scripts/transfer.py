@@ -44,8 +44,6 @@ style_path = "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh
 def setStylePath(name):
     global style_path
     style_path = name
-    print('---> setStylePath <---')
-    print(style_path)
 
 def setIteration(val):
     global ITERATIONS
@@ -131,9 +129,6 @@ def model_transfer(img):
 
     print(input_image.size)
     print(input_image.getbands())
-
-    print('------------> style_path <----------')
-    print(style_path)
 
     # Style visualization
     style_image = Image.open(BytesIO(requests.get(style_path).content))
