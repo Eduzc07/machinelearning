@@ -35,3 +35,7 @@ cd machinelearning/5_midterm_StylexAI
 pip install -r requirements.txt
 python app.py
 ```
+
+## Links
+- [Set Paypal Button](https://developer.paypal.com/docs/archive/checkout/integrate/#1-get-the-code)
+- [Customize the PayPal JavaScript SDK Script](https://developer.paypal.com/docs/checkout/reference/customize-sdk/)

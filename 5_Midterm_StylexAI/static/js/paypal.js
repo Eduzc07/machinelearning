@@ -17,8 +17,6 @@ paypal.Buttons({
       console.log("---------------------------Paid")
       console.log(data.orderID)
 
-      // $("#setting-status").text("Account: Premium")
-
       $('#setting-status').text(function(i, oldText) {
           return "Account: Premium";
           // return oldText === 'Profil' ? 'New word' : oldText;
@@ -31,7 +29,21 @@ paypal.Buttons({
       });
     });
   },
+  // Configure environment
+  // env: 'sandbox',
+  // client: {
+  //   sandbox: 'demo_sandbox_client_id',
+  //   production: 'demo_production_client_id'
+  // },
 
+  // Configure environment
+  // env: 'production',
+  // client: {
+  //     production: 'LIVE_CLIENT_ID' //Enter your live client ID here
+  // }
+
+  // Customize button (optional)
+  locale: 'es_PE',
   style: {
       layout: 'horizontal',
       color: 'blue',
