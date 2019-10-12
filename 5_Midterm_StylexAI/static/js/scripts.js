@@ -58,17 +58,17 @@ $(document).ready(function() {
     });
   });
 
-  $('#setting-status').text(function(i, oldText) {
-      console.log(">>>>>>>>>>>>>>>>>>>>>>>> Setting")
-      console.log(i)
-      console.log(oldText)
-      var textID = "Account: Free";
-      if (oldText != 'null'){
-        textID = "Account: Premium";
-      }
-      console.log(textID)
-      return textID
-  });
+  // $('#setting-status').text(function(i, oldText) {
+  //     console.log(">>>>>>>>>>>>>>>>>>>>>>>> Setting")
+  //     console.log(i)
+  //     console.log(oldText)
+  //     var textID = "Account: Free";
+  //     if (oldText != 'null'){
+  //       textID = "Account: Premium";
+  //     }
+  //     console.log(textID)
+  //     return textID
+  // });
 });
 
 // Open or Close mobile & tablet menu
