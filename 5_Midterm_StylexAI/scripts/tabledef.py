@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 import sys
 import os
 from sqlalchemy import create_engine
@@ -13,7 +12,6 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///accounts.db'
 #SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
 Base = declarative_base()
-
 
 def db_connect():
     """

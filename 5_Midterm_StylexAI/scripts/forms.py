@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from wtforms import Form, StringField, validators
 
 class LoginForm(Form):

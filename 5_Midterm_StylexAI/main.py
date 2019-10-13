@@ -126,7 +126,7 @@ def upload():
         rgb_im = img.convert('RGB')
         fileName = transfer.model_transfer(rgb_im)
         return fileName
-    return None
+    return 'Ok'
 
 @app.route('/style', methods=['GET', 'POST'])
 def setStyle():
@@ -147,3 +147,4 @@ if __name__ == "__main__":
     # app.run(use_reloader=True)
     app.run(debug=True, use_reloader=True)
     # app.run(host= '0.0.0.0', use_reloader=True)
+    # app.run(host="127.0.0.1", port=8080, debug=True)
