@@ -16,14 +16,12 @@
 Simple Web app using Style Transfer and has been deployed using Google Cloud and can be tested here in
 [StylexAI](https://stylexai.appspot.com/).
 
-This is in Beta version, it runs Ok in local host but have some troubles in Google Clouds.
+This is in Beta version, it runs Ok in local host but have some troubles in Google Clouds. With free version can process images, but with pay-access can download the result.
 
 ## Homework features
 - Machine learning in [Style Transfer](https://towardsdatascience.com/style-transfer-styling-images-with-convolutional-neural-networks-7d215b58f461)
 - User login/signup functionality using [Flaskex](https://github.com/anfederico/Flaskex)
 - Payment service using paypal
-
-With free version can process image. The pay-access allow to download the result.
 
 ## Features
 - Encrypted user authorizaton
