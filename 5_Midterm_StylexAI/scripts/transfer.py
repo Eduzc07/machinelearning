@@ -84,8 +84,8 @@ def resizeCropImage(image):
     new_height = IMAGE_HEIGHT
     new_width  = int(new_height * width / height)
 
-    # image = image.resize((new_width, new_height), Image.ANTIALIAS)
-    image.thumbnail((new_width, new_height), Image.ANTIALIAS)
+    image = image.resize((new_width, new_height), Image.ANTIALIAS)
+    #image.thumbnail((new_width, new_height), Image.ANTIALIAS)
 
     if (new_width > new_height):
       dx = int((new_width - IMAGE_WIDTH) / 2 )

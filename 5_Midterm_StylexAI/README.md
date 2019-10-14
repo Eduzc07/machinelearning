@@ -18,6 +18,10 @@ Simple Web app using Style Transfer and has been deployed using Google Cloud and
 
 This is in Beta version, it runs Ok in local host but have some troubles in Google Clouds. With free version can process images, but with pay-access can download the result.
 
+ The process can be checked in Google Colab.
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eduzc07/machinelearning/blob/master/5_Midterm_StylexAI/StyleTransfer.ipynb)
+
+
 ## Homework features
 - Machine learning in [Style Transfer](https://towardsdatascience.com/style-transfer-styling-images-with-convolutional-neural-networks-7d215b58f461)
 - User login/signup functionality using [Flaskex](https://github.com/anfederico/Flaskex)
@@ -65,3 +69,8 @@ gcloud app deploy app.yaml --project stylexai --http-timeout=1200 --verbosity=de
 - [Set Paypal Button](https://developer.paypal.com/docs/archive/checkout/integrate/#1-get-the-code)
 - [Customize the PayPal JavaScript SDK Script](https://developer.paypal.com/docs/checkout/reference/customize-sdk/)
 - [Yaml Validator](http://www.yamllint.com/)
+
+### Options to host Webapp
+- Google Cloud
+- [Render](https://render.com/)
+- [Heroku](https://heroku.com)
