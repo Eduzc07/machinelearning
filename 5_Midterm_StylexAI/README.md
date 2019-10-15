@@ -65,6 +65,17 @@ gcloud config set app/cloud_build_timeout 1200
 gcloud app deploy app.yaml --project stylexai --http-timeout=1200 --verbosity=debug
 ```
 
+### Heroku Configuration
+```
+# Create heroku project
+heroku create sylexai --buildpack heroku/python
+# Load libraries
+pip freeze > requirements.txt
+# Add remote
+heroku git:remote -a sylexai
+
+```
+
 ## Links
 - [Set Paypal Button](https://developer.paypal.com/docs/archive/checkout/integrate/#1-get-the-code)
 - [Customize the PayPal JavaScript SDK Script](https://developer.paypal.com/docs/checkout/reference/customize-sdk/)

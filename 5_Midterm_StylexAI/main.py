@@ -145,6 +145,6 @@ def setIteration():
 # ======== Main ============================================================== #
 if __name__ == "__main__":
     # app.run(use_reloader=True)
-    app.run(debug=True, use_reloader=True)
+    # app.run(debug=True, use_reloader=True)
     # app.run(host= '0.0.0.0', use_reloader=True)
-    # app.run(host="127.0.0.1", port=8080, debug=True)
+    app.run(host="127.0.0.1", port=8080, debug=True)
