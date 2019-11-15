@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="hero is-light is-medium">
+  <nav class="navbar is-transparent">
+
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="https://developer.nvidia.com/sites/default/files/akamai/homepage/DevZone_Icon_Green_Machine_Learning.png" alt="pneuma_logo">
+
+        <h6 href="/" class="subtitle"><strong>PneumoAI</strong></h6>
+      </a>
+
+      <div id="navbar-burger-id" class="navbar-burger burger" data-target="navbar-menu-id">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <div id="navbar-menu-id" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+
+            <p class="control">
+              <a href="/logout" class="button is-dark is-outlined">
+                <span>Logout</span>
+              </a>
+            </p>
+
+            <p class="control">
+              <a href="/settings" class="button is-dark is-outlined">
+                <span id="cog" class="icon">
+                  <i class="fa fa fa-cog"></i>
+                </span>
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<section class="hero is-dark is-fullheight header-image has-text-centered">
+    <br>
+      <p class="title is-2">Pneumonia Detection</p>
+
+      <div class="freeText-section">
+        <p class="subtitle is-4"><i>Access as premium only for $4.99 and check as much as you want!!</i></p>
+      </div>
+
+      <br>
+
+      <div class="columns is-mobile is-centered is-vcentered is-full">
+
+        <div class="column">
+          <div class="upload-section">
+            <div class="field">
+              <div class="button is-dark is-inverted is-outlined is-large">
+                <form id="upload-file" method="post" enctype="multipart/form-data">
+                  <label for="imageUpload" class= "file-label">
+                    <input type="file" name="image" id="imageUpload"
+                           accept="image/*"
+                           class= "file-input">
+                       <span class="file-icon">
+                          <i class="fa fa-upload" style="font-size:24px;"></i>
+                       </span>
+                       <span class="file-label">
+                         Upload image
+                       </span>
+                  </label>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="columns is-mobile has-text-centered">
+
+    <div class="column">
+      <!-- Image preview -->
+      <div class="display-image ">
+        <div class="image-preview" style="display:none;">
+          <img id="thumbnail" src="#" alt="image-preview-here" width="310" height="310"/>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="title is-5" id="login-status" style="display:none;">{{user.orderID}}</p>
+
+  <p class="subtitle is-4" id="result"> </p>
+
+  <br>
+</section>
+<!-- -------------- -->
+
+<section class="hero has-text-centered header-image">
+  <div class="columns is-mobile">
+    <div class="column">
+      <div class="process-section" style="display:none;">
+        <a id="btn-predict" class="button is-dark is-inverted is-outlined is-large">
+          <span>Process</span>
+        </a>
+
+      </div>
+
+      <div class="loader" style="display:none;"></div>
+
+    </div>
+
+  </div>
+  <br>
+</section>
+
+<section class="hero">
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>
+          <strong>PneumoAI</strong> by Eduardo Zárate
+          <span class="icon is-small">
+            <i class="fa fa-copyright"></i>
+          </span>2019</a>
+        </p>
+        <p>
+          <a class="icon has-text-dark" href="https://e2i.com.pe" target="_blank">
+            <i class="fa fa-globe"></i>
+          </a>
+          <a class="icon has-text-dark" href="https://github.com/Eduzc07" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+          <a class="icon has-text-dark" href="mailto:e.zarate@pucp.pe" target="_blank">
+            <i class="fa fa-envelope"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="../static/js/main.js"></script>
+{% endblock %}
