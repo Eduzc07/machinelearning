@@ -36,7 +36,7 @@ The process can be checked in Google Colab.
 - Limited custom css/js
 - Easily customizable
 - Paid user using PayPal
-- Style Transfer example
+- Convolutional Neural Network using Keras
 
 ## Setup
 #### GitHub
