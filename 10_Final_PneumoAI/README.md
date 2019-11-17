@@ -1,4 +1,4 @@
-<p align="center"><img src="https://streamlending.com.au/wp-content/uploads/2018/01/SL-Loan-Hero-AI-logo-banks-300x264.png" width="128px"><p>
+<p align="center"><img src="https://developer.nvidia.com/sites/default/files/akamai/homepage/DevZone_Icon_Green_Machine_Learning.png" width="128px"><p>
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -12,18 +12,16 @@
 
 <!-- <p align="center"><img src="https://raw.githubusercontent.com/anfederico/Flaskex/master/media/flaskex-demo.png" width="100%"><p> -->
 
-# Midterm Homework - StylexAI
-Simple Web app using Style Transfer and has been deployed using Google Cloud and can be tested here in
-[StylexAI](https://stylexai.appspot.com/).
+# Final Work - PneumoAI
+Simple Web app using CNN has been deployed using Heroku and can be tested here in
+[PneumoAI](https://pneumoai.herokuapp.com/).
 
-This is in Beta version, it runs Ok in local host but have some troubles in Google Clouds. With free version can process images, but with pay-access can download the result.
-
- The process can be checked in Google Colab.
+The process can be checked in Google Colab.
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eduzc07/machinelearning/blob/master/5_Midterm_StylexAI/StyleTransfer.ipynb)
 
 
 ## Homework features
-- Machine learning in [Style Transfer](https://towardsdatascience.com/style-transfer-styling-images-with-convolutional-neural-networks-7d215b58f461)
+- Machine learning using [CNN](https://www.kaggle.com/faizunnabi/diagnose-pneumonia)
 - User login/signup functionality using [Flaskex](https://github.com/anfederico/Flaskex)
 - Payment service using paypal
 
@@ -41,51 +39,48 @@ This is in Beta version, it runs Ok in local host but have some troubles in Goog
 - Style Transfer example
 
 ## Setup
+#### GitHub
 ```
 git clone https://github.com/Eduzc07/machinelearning
-cd machinelearning/5_midterm_StylexAI
+cd machinelearning/10_Final_PneumoAI
 pip install -r requirements.txt
 python main.py
 ```
-
-## Setup Google cloud to deploy
+#### Heroku
 ```
-git clone https://github.com/Eduzc07/machinelearning
-cd machinelearning/5_midterm_StylexAI
-virtualenv --python python3  ~/envs/stylex
-source ~/envs/stylex/bin/activate
+git clone https://git.heroku.com/pneumoai.git
+cd PneumoAI
 pip install -r requirements.txt
-# Test if it is running
 python main.py
-# Ignore if it has been already created
-gcloud app create
-# Change timeout
-gcloud config set app/cloud_build_timeout 1200
-# Deploy
-gcloud app deploy app.yaml --project stylexai --http-timeout=1200 --verbosity=debug
 ```
 
 ### Heroku Configuration
 ```
-# Create heroku project
-heroku create sylexai --buildpack heroku/python
+# To Create heroku project
+heroku create pneumai --buildpack heroku/python
+# Start git locally
+git init
 # Load libraries
 pip freeze > requirements.txt
 # Add remote
-heroku git:remote -a sylexai
+heroku git:remote -a pneumai
+# To Deploy
+git push heroku master
+```
 
+#### Example user SandBox Paypal
+Use the next user to test PayPal:
+```
+e-mail: sb-pac4f384293@personal.example.com
+pass: /CI.2hq[
 ```
 
 ## Links
 - [Set Paypal Button](https://developer.paypal.com/docs/archive/checkout/integrate/#1-get-the-code)
 - [Customize the PayPal JavaScript SDK Script](https://developer.paypal.com/docs/checkout/reference/customize-sdk/)
-- [Yaml Validator](http://www.yamllint.com/)
+- [Lungcure](https://github.com/FlorianWoelki/lungcure)
+- [Medical StartUp](https://github.com/namas191297/medical_cost_estimator_startup)
 
 ### Options to host Webapp
-- Google Cloud
 - [Render](https://render.com/)
 - [Heroku](https://heroku.com)
-
-
-mail: sb-pac4f384293@personal.example.com
-pass: /CI.2hq[

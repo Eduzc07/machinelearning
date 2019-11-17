@@ -1,22 +1,14 @@
 # -*- coding: utf-8 -*-
 from app import app # Import app to use routes
-
 from app.scripts import tabledef
 from app.scripts import forms
 from app.scripts import helpers
 from model_deploy import * # Import to build the model and predict a image
-
-from PIL import Image
-
+import tensorflow as tf # Import to build the graph for the model
 from flask import Flask, redirect, url_for, render_template, request, session
-
 from werkzeug.utils import secure_filename
-
 import json
-import sys
 import os
-
-model = build_model() # Build the model with the specific json and h5 weights file
 
 # VERIFY_URL_PROD = 'https://ipnpb.paypal.com/cgi-bin/webscr'
 # VERIFY_URL_TEST = 'https://ipnpb.sandbox.paypal.com/cgi-bin/webscr'
@@ -25,12 +17,17 @@ model = build_model() # Build the model with the specific json and h5 weights fi
 #app = Flask(__name__)
 app.secret_key = os.urandom(12)  # Generic key for dev purposes only
 
+# Define the allowed file extensions that can be uploaded
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+
 # Heroku
 #from flask_heroku import Heroku
 #heroku = Heroku(app)
-
-# Define the allowed file extensions that can be uploaded
-ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
+print("------------------ Route -----------------------------")
+#model = None
+model = build_model() # Build the model with the specific json and h5 weights file
+graph = tf.get_default_graph() # Get the default graph from tensorflow
+isBuilded = False
 
 # ======== Routing =========================================================== #
 # -------- Login ------------------------------------------------------------- #
@@ -109,11 +106,27 @@ def allowed_file(filename):
 	return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/predict', methods=['GET', 'POST'])
-def upload():
+def predict():
     if request.method == 'POST':
+        # global model, isBuilded
+        # print("------------------ isBuilded -----------------------------")
+        # print(isBuilded)
+        #
+        # if not isBuilded:
+        #     isBuilded = True
+        #     print("------------------ predict -----------------------------")
+        #     model = build_model() # Build the model with the specific json and h5 weights file
+        #     print("------------------ Finished!-----------------------------")
         # Get the file from post request
         file = request.files['image']
         if file and allowed_file(file.filename):
-            predictions = predict_image(model, file)
+            global graph
+            with graph.as_default():
+                predictions = predict_image(model, file)
         return predictions
     return None
+
+#print("------------------ Route -----------------------------")
+# print(__name__)
+#model = build_model() # Build the model with the specific json and h5 weights file
+print("------------------ Finished!-----------------------------")

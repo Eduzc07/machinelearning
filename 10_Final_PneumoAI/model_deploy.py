@@ -1,16 +1,15 @@
 from keras.preprocessing import image
 from keras.models import Sequential, model_from_json
 import numpy as np
-
 import json
 
 def build_model():
-  with open('model_results/model.json', 'r') as json_file:
+  with open('./model_results/model.json', 'r') as json_file:
     architecture = json.load(json_file)
     model = model_from_json(json.dumps(architecture))
 
-  model.load_weights('model_results/model_weight.h5')
-  model._make_predict_function()
+  model.load_weights('./model_results/model_weight.h5')
+  #model._make_predict_function()
   return model
 
 def load_image(img_path):
@@ -23,6 +22,8 @@ def load_image(img_path):
 def predict_image(model, img_path, biggest_result=False, show_result=False):
   new_image = load_image(img_path)
   pred = model.predict(new_image)
+  print("----------------------------------")
+  print(pred)
   predicton = "Normal" if (pred.argmax(axis=-1)==0) else "Pneumonia"
   pred_text = ("Prediction: %s"%(predicton))
 
@@ -33,3 +34,6 @@ def predict_image(model, img_path, biggest_result=False, show_result=False):
     plt.show()
 
   return pred_text
+
+# if __name__ == '__main__':
+#   model = build_model()
