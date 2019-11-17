@@ -17,7 +17,7 @@ Simple Web app using CNN has been deployed using Heroku and can be tested here i
 [PneumoAI](https://pneumoai.herokuapp.com/).
 
 The process can be checked in Google Colab.
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eduzc07/machinelearning/blob/master/5_Midterm_StylexAI/StyleTransfer.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Eduzc07/machinelearning/blob/master/10_Final_PneumoAI/AutomatedDiagnosis.ipynb)
 
 
 ## Homework features
