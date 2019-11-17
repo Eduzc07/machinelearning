@@ -57,13 +57,13 @@ python main.py
 ### Heroku Configuration
 ```
 # To Create heroku project
-heroku create pneumai --buildpack heroku/python
+heroku create pneumoai --buildpack heroku/python
 # Start git locally
 git init
 # Load libraries
 pip freeze > requirements.txt
 # Add remote
-heroku git:remote -a pneumai
+heroku git:remote -a pneumoai
 # To Deploy
 git push heroku master
 ```
