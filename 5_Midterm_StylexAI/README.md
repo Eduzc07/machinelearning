@@ -68,11 +68,11 @@ gcloud app deploy app.yaml --project stylexai --http-timeout=1200 --verbosity=de
 ### Heroku Configuration
 ```
 # Create heroku project
-heroku create sylexai --buildpack heroku/python
+heroku create sytlexai --buildpack heroku/python
 # Load libraries
 pip freeze > requirements.txt
 # Add remote
-heroku git:remote -a sylexai
+heroku git:remote -a stylexai
 
 ```
 
